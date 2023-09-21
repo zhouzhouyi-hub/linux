@@ -4,6 +4,7 @@
 #ifdef CONFIG_BPF_JIT
 #ifdef CONFIG_NET
 BPF_STRUCT_OPS_TYPE(bpf_dummy_ops)
+BPF_STRUCT_OPS_TYPE(bpf_ucas_ops)
 #endif
 #ifdef CONFIG_INET
 #include <net/tcp.h>

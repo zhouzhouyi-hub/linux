@@ -1660,6 +1660,22 @@ struct bpf_dummy_ops {
 	int (*test_sleepable)(struct bpf_dummy_ops_state *cb);
 };
 
+struct bpf_ucas_ops_state {
+	unsigned long hello;
+	int val;
+};
+
+struct rcu_params {
+	unsigned long jiffies_to_sched_qs;
+};
+
+struct bpf_ucas_ops {
+        int (*test_1)(struct psi_group * group, struct rcu_params * rcu_params);
+        int (*test_2)(struct psi_group * group, int a1, unsigned short a2,
+                      char a3, unsigned long a4);
+};
+
+
 int bpf_struct_ops_test_run(struct bpf_prog *prog, const union bpf_attr *kattr,
 			    union bpf_attr __user *uattr);
 #endif
